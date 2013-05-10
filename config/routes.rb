@@ -1,5 +1,8 @@
 Flowersofdx::Application.routes.draw do
   
+  devise_for :admins
+  devise_for :users
+
   root :to => 'pages#home'
   get 'about' => 'pages#about'
   get 'products' => 'pages#products'

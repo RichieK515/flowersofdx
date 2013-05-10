@@ -1,12 +1,16 @@
-<h1>Welcome to Flowers of DX!</h1>
-
 <%= render 'layouts/carousel' %>
 
-<p>
-  You've found the home page for the
-  <%= link_to "Flowers of DX", "http://flowersofdx.com" %>
-  application.
-</p>
-<p>
-  <%= link_to "Sign Up Now!", '#' %>
-</p>
+<% if user_signed_in? or admin_signed_in? %>
+	<h1> You're logged in!</h1>
+<% else %>
+	<p>
+	  You've found the home page for the
+	  <%= link_to "Flowers of DX", "http://flowersofdx.com" %>
+	  application.
+	</p>
+	<p>
+	  <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+
+	  <%= link_to "Create Admin Account!", new_admin_registration_path, class: "btn btn-primary btn-large" %>
+	</p>
+<% end %>
