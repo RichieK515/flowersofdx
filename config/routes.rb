@@ -2,13 +2,11 @@ Flowersofdx::Application.routes.draw do
   
   resources :products
 
-
   devise_for :admins
   devise_for :users
 
   root :to => 'pages#home'
   get 'about' => 'pages#about'
-  get 'products' => 'pages#products'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
