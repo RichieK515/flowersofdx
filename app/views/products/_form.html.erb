@@ -1,0 +1,16 @@
+<%= simple_form_for(@product, html: { class: 'form-horizontal'}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description, as: :text, input_html: { rows: "3" } %>
+    <%= f.input :category %>
+    <%= f.input :pri_color %>
+    <%= f.input :sec_color %>
+    <%= f.input :quantity %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

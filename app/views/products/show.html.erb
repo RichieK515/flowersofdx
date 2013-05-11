@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="span6 offset3">
+    <div class="well">
+      <p>
+        <b>Name:</b>
+        <%= @product.name %>
+      </p>
+
+      <p>
+        <b>Description:</b>
+        <%= @product.description %>
+      </p>
+
+      <p>
+        <b>Category:</b>
+        <%= @product.category %>
+      </p>
+
+      <p>
+        <b>Pri color:</b>
+        <%= @product.pri_color %>
+      </p>
+
+      <p>
+        <b>Sec color:</b>
+        <%= @product.sec_color %>
+      </p>
+
+      <p>
+        <b>Quantity:</b>
+        <%= @product.quantity %>
+      </p>
+      <%= link_to 'Edit', edit_product_path(@product) %> |
+      <%= link_to 'Back', products_path %>
+    </div>
+  </div>
+</div>

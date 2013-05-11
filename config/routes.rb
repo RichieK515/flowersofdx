@@ -1,5 +1,8 @@
 Flowersofdx::Application.routes.draw do
   
+  resources :products
+
+
   devise_for :admins
   devise_for :users
 
