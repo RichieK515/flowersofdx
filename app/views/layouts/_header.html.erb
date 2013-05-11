@@ -25,9 +25,9 @@
             <ul class="nav pull-right">
             <!-- Displays buttons when logged in/out -->         
               <% if admin_signed_in? %>
-                <%= render 'layouts/adminloggedin' %>
+                <%= render 'layouts/admincontrolbutton' %>
               <% elsif user_signed_in? %>
-                <%= render 'layouts/userloggedin' %>
+                <%= render 'layouts/usercontrolbutton' %>
               <% else %>
                 <li><%= link_to "Admin Login", new_admin_session_path %></li>
                 <li><%= link_to "Login", new_user_session_path %></li>
