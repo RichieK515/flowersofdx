@@ -17,18 +17,18 @@
       </p>
 
       <p>
-        <b>Pri color:</b>
+        <b>Primary color:</b>
         <%= @product.pri_color %>
       </p>
 
       <p>
-        <b>Sec color:</b>
+        <b>Secondary color:</b>
         <%= @product.sec_color %>
       </p>
 
       <p>
-        <b>Quantity:</b>
-        <%= @product.quantity %>
+        <b>Quantity Available:</b>
+        <%= @product.quantity_avail %>
       </p>
 
       <% if admin_signed_in? %>       <!-- Only displays to admins -->
