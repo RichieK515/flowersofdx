@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_admin!, except: [:index, :show]
+
   # GET /products
   # GET /products.json
   def index
@@ -25,6 +27,8 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+    @product.creator_admin_id = current_admin.id      # Sets the creator_admin_id to the current admin id
+    @product.lastedit_admin_id = current_admin.id     # Sets the lastedit_admin_id to the current admin id
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +39,15 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @product.lastedit_admin_id = current_admin.id     # Sets the lastedit_admin_id to the current admin id
   end
 
   # POST /products
   # POST /products.json
   def create
     @product = Product.new(params[:product])
+    @product.creator_admin_id = current_admin.id      # Sets the creator_admin_id to the current admin id
+    @product.lastedit_admin_id = current_admin.id     # Sets the lastedit_admin_id to the current admin id
 
     respond_to do |format|
       if @product.save
@@ -57,6 +64,7 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
+    @product.lastedit_admin_id = current_admin.id     # Sets the lastedit_admin_id to the current admin id
 
     respond_to do |format|
       if @product.update_attributes(params[:product])

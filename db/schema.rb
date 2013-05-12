@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511144225) do
+ActiveRecord::Schema.define(:version => 20130512151214) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -39,9 +39,14 @@ ActiveRecord::Schema.define(:version => 20130511144225) do
     t.string   "pri_color"
     t.string   "sec_color"
     t.integer  "quantity"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "creator_admin_id"
+    t.integer  "lastedit_admin_id"
   end
+
+  add_index "products", ["creator_admin_id"], :name => "index_products_on_admin_id"
+  add_index "products", ["lastedit_admin_id"], :name => "index_products_on_lastedit_admin_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
