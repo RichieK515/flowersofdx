@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513025023) do
+ActiveRecord::Schema.define(:version => 20130514083604) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,6 +47,10 @@ ActiveRecord::Schema.define(:version => 20130513025023) do
     t.string   "image1_content_type"
     t.integer  "image1_file_size"
     t.datetime "image1_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "products", ["creator_admin_id"], :name => "index_products_on_admin_id"
