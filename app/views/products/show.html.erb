@@ -7,32 +7,26 @@
         <b>Name:</b>
         <%= @product.name %>
       </p>
-
       <p>
         <b>Description:</b>
         <%= @product.description %>
       </p>
-
       <p>
         <b>Category:</b>
         <%= @product.category %>
       </p>
-
       <p>
         <b>Primary color:</b>
         <%= @product.pri_color %>
       </p>
-
       <p>
         <b>Secondary color:</b>
         <%= @product.sec_color %>
       </p>
-
       <p>
         <b>Quantity Available:</b>
         <%= @product.quantity_avail %>
       </p>
-
       <% if admin_signed_in? %>       <!-- Only displays to admins -->
         <p>
           <b>Creator:</b>
@@ -43,11 +37,9 @@
           <%= Admin.find(@product.lastedit_admin_id).name %>
         </p>
       <% end %>
-
       <% if admin_signed_in? %>       <!-- Only allows admin to modify product -->
         <%= link_to 'Edit', edit_product_path(@product) %> |
       <% end %>
-
       <%= link_to 'Back', products_path %>
     </div>
   </div>

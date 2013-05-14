@@ -1,14 +1,18 @@
-<tr>
-  <td><%= image_tag product.image_upload(:thumb) %></td>
-  <td><%= product.name %></td>
-  <td><%= product.description %></td>
-  <td><%= product.category %></td>
-  <td><%= product.pri_color %></td>
-  <td><%= product.sec_color %></td>
-  <td><%= product.quantity_avail %></td>
-  <td><%= link_to 'Show', product %></td>
-  <% if admin_signed_in? %>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-</tr>
+<div class="span4">
+  <div class="well">
+    <p><%= link_to (image_tag product.image(:thumb)), product %></p>
+    <p><b>Name: </b><%= product.name %></p>
+    <p><b>Description: </b><%= product.description %></p>
+    <!--
+    <p><b>Category: </b><%= product.category %></p>
+    <p><b>Primary Color: </b><%= product.pri_color %></p>
+    <p><b>Secondary Color: </b><%= product.sec_color %></p>
+    <p><b>Quantity: </b><%= product.quantity_avail %></p>
+    -->
+    <p><%= link_to 'Show', product %></p>
+    <% if admin_signed_in? %>
+      <p><%= link_to 'Edit', edit_product_path(product) %></p>
+      <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% end %>
+  </div>
+</div>
