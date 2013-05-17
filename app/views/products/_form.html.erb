@@ -7,7 +7,7 @@
     <%= f.input :image, label: "Upload an image" %>
     <%= f.input :name %>
     <%= f.input :description, as: :text, input_html: { rows: "3" } %>
-    <%= f.input :category %>
+    <%= f.input :category, as: :select, collection: Category.all(order: 'name'), :label_method => :name, :value_method => :name %>
     <%= f.input :pri_color %>
     <%= f.input :sec_color %>
     <%= f.input :quantity_avail %>

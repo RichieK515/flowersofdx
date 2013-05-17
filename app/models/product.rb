@@ -9,5 +9,7 @@ class Product < ActiveRecord::Base
   														 size: { less_than: 2.megabytes }
 
   belongs_to :admin
-  has_attached_file :image, styles: { :medium => "320x240>", :thumb => "100x100>" }
+  has_attached_file :image, styles: { :medium => "320x240>", :thumb => "160x120>" }
+
+  has_many :categories
 end

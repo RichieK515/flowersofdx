@@ -3,12 +3,14 @@
     <p><%= link_to (image_tag product.image(:thumb)), product %></p>
     <p><b>Name: </b><%= product.name %></p>
     <p><b>Description: </b><%= product.description %></p>
-    <!--
-    <p><b>Category: </b><%= product.category %></p>
-    <p><b>Primary Color: </b><%= product.pri_color %></p>
-    <p><b>Secondary Color: </b><%= product.sec_color %></p>
-    <p><b>Quantity: </b><%= product.quantity_avail %></p>
-    -->
+    
+    <% if false %>
+      <p><b>Category: </b><%= product.category %></p>
+      <p><b>Primary Color: </b><%= product.pri_color %></p>
+      <p><b>Secondary Color: </b><%= product.sec_color %></p>
+      <p><b>Quantity: </b><%= product.quantity_avail %></p>
+    <% end %>
+
     <p><%= link_to 'Show', product %></p>
     <% if admin_signed_in? %>
       <p><%= link_to 'Edit', edit_product_path(product) %></p>
